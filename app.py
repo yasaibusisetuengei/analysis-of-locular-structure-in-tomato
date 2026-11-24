@@ -1385,7 +1385,7 @@ def main():
         "画像の選択方法",
         [
             "ファイルをアップロード",
-            f"サンプル画像 (sample/{SAMPLE_TOMATO_NAME}) を使用",
+            f"サンプル画像 ({SAMPLE_TOMATO_NAME}) を使用",
         ],
         horizontal=True,
     )
@@ -1406,7 +1406,7 @@ def main():
                 file_bytes = load_sample_tomato_bytes()
                 file_name = SAMPLE_TOMATO_NAME
         except Exception:
-            st.error(f"サンプル画像を読み込めませんでした。tomato_app.py と同じ階層の sample フォルダに {SAMPLE_TOMATO_NAME} を配置してください。")
+            st.error(f"サンプル画像を読み込めませんでした。app.py と同じフォルダ（または sample フォルダ）に {SAMPLE_TOMATO_NAME} を配置してください。")
             st.stop()
     file_key = f"{os.path.basename(file_name)}_{len(file_bytes)}"
 
